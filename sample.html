@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>sample</title>
+</head>
+<body>
+  <div>
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/-E8lKdUa16Y" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" crossorigin="anonymous"></iframe>
+  </div>
+
+
+
+  <script>
+    const audioContext = new OfflineAudioContext(2, 44100 * 40, 44100);
+
+    const audioElement = document.querySelector('video');
+    // console.log(document.querySelector('iframe').contentWindow.document);
+    console.log(audioElement);
+    const track = audioContext.createMediaElementSource(audioElement);
+
+    console.log(track);
+  </script>
+</body>
+</html>
