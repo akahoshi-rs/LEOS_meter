@@ -1,8 +1,8 @@
 {
   "name": "LEOS_meter",
   "version": "1.0",
-  "description": "ストリーミングオーディオの再生中に音の大きさを表示します。/ Shows the loudness during playback of streaming audio.",
-  "manifest_version": 3,
+  "description": "オーディオの再生中に音の大きさを表示します。/ Shows the loudness during playback of audio.",
+  "manifest_version": 2,
   "permissions": ["storage"],
   "background": {
     "scripts": ["background.js"],

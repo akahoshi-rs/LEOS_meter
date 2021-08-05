@@ -8,20 +8,37 @@
 </head>
 <body>
   <div>
-    <iframe width="560" height="315" src="https://www.youtube.com/embed/-E8lKdUa16Y" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" crossorigin="anonymous"></iframe>
+    <!-- <iframe width="560" height="315" src="https://www.youtube.com/embed/-E8lKdUa16Y" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" crossorigin="anonymous"></iframe> -->
+  </div>
+  <div>
+    <video style="background:#aaa" src="y2mate.mp3"></video>
   </div>
 
 
-
   <script>
-    const audioContext = new OfflineAudioContext(2, 44100 * 40, 44100);
-
     const audioElement = document.querySelector('video');
-    // console.log(document.querySelector('iframe').contentWindow.document);
     console.log(audioElement);
-    const track = audioContext.createMediaElementSource(audioElement);
+    
+    // const OffAudioContext = new OfflineAudioContext(2, 44100 * 40, 44100);
+    const OnAudioContext = new AudioContext();
 
-    console.log(track);
+
+    // console.log(document.querySelector('iframe').contentWindow.document);
+    // const source = OffAudioContext.createBufferSource(audioElement);
+    const track = OnAudioContext.createMediaElementSource(audioElement);
+
+    // console.log(track);
+
+    let analyser = OnAudioContext.createAnalyser();
+    // let analyser = OffAudioContext.createAnalyser();
+
+    console.log(analyser);
+
+
+    analyser.fftSize = 2048;
+    const bufferLength = analyser.fftSize;
+    const dataArray = new Uint8Array(bufferLength);
+    analyser.getByteTimeDomainData(dataArray);
   </script>
 </body>
 </html>
