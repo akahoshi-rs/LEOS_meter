@@ -1,0 +1,23 @@
+{
+  "name": "LEOS_meter",
+  "version": "1.0",
+  "description": "YouTubeオーディオの再生中に音の大きさを表示します。/ Shows the loudness while playing YouTube audio.",
+  "manifest_version": 2,
+  "permissions": [
+    "activeTab",
+    "tabs"
+  ],
+  "content_scripts": [
+    {
+      "matches": [
+        "https://www.youtube.com/*"
+      ],
+      "js": [
+        "function.js"
+      ]
+    }
+  ],
+  "web_accessible_resources": [
+    "images/*.GIF"
+  ]
+}
